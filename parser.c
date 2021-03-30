@@ -4,7 +4,13 @@
 #include "stdio.h"
 #define BUFFER 4096
 
+typedef struct		holde
+{
+	int				positionx1;
+	int				positionx2;
+	int				*next;
 
+};
 int	ft_find_next(char *str, char next)
 {
 	int value;
@@ -35,6 +41,10 @@ return (jump + 1);
 return 0;
 }
 
+
+
+
+
 int main(void)
 {
 	char 	*buffer;
@@ -56,5 +66,5 @@ int main(void)
 	}
 	start = buffer;
 	printf( "%d\n",jump_lenght(buffer));
-	printf( "%d",ft_find_next((buffer + jump_lenght(buffer)),'o'));
+	printf( "%d",ft_find_next(buffer,'o'));
 }
