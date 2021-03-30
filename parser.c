@@ -14,13 +14,14 @@ int	ft_find_next(char *str, char next)
 		str++;
 		value++;
 	}
-	return (value);
+	return (value + 1);
 }
 
 int jump_lenght(char *buffer)
 {
 	//height == lenght - 1 cause you dont want to be in void;
 	// wdith  == lenhgt + 1 you want to count '\n;
+	// the height can be the lenght...;
 	// there also a + 1 of the start or it wont run;
 	int jump;
 	jump = 0;
@@ -53,7 +54,7 @@ int main(void)
 	size = read(file,buffer,BUFFER);
 	size++;
 	}
-	buffer++;
 	start = buffer;
-	printf( "%d",jump_lenght(buffer));
+	printf( "%d\n",jump_lenght(buffer));
+	printf( "%d",ft_find_next((buffer + jump_lenght(buffer)),'o'));
 }
